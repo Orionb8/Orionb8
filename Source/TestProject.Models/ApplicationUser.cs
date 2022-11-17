@@ -22,17 +22,5 @@ namespace DamuBala.Entities.Entities
         /// Фамилия
         /// </summary>
         public string LastName { get; set; }
-
-        /// <summary> 
-        /// ИИН
-        /// </summary>
-        public string IIN { get; set; }
-
-        /// <summary>
-        /// Тип пользователя
-        /// </summary>
-        public int? UserType { get; set; }
-        public bool IsShared { get; set; }
-        public bool IsImported { get; set; }
     }
 }

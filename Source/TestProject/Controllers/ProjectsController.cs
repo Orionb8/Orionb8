@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -10,7 +11,7 @@ using TestProject.ViewModels;
 namespace TestProject.Controllers {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ProjectsController : BaseController<ProjectEntity, IRepo<ProjectEntity>, ProjectViewModel> {
         public ProjectsController(
             IRepo<ProjectEntity> repo,

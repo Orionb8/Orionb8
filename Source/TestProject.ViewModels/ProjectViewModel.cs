@@ -11,6 +11,7 @@ namespace TestProject.ViewModels
         public HProjectTypeViewModel HProjectType { get; set; }
         public HProjectStatusViewModel HProjectStatus { get; set; }
         public HProjectDesicionViewModel HProjectDesicion { get; set; }
+        public TeamViewModel Team { get; set; }
     }
 }
 

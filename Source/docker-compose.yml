@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  testPrject.backend:
+    image: ${DOCKER_REGISTRY-}testproject
+    ports:
+      - "5006:5006"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5006
+    build:
+      context: .
+      dockerfile: TestProject/Dockerfile

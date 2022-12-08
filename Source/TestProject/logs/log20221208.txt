@@ -1,0 +1,41 @@
+2022-12-08 21:27:02.986 +06:00 [INF] User profile is available. Using '/Users/orion/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-12-08 21:27:03.199 +06:00 [INF] Now listening on: http://localhost:5001
+2022-12-08 21:27:03.200 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-08 21:27:03.200 +06:00 [INF] Hosting environment: Development
+2022-12-08 21:27:03.200 +06:00 [INF] Content root path: /Users/orion/Documents/GitHub/ProjectControl/Source/TestProject
+2022-12-08 21:27:11.917 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/index.html - -
+2022-12-08 21:27:11.974 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5001/index.html - - - 200 - text/html;charset=utf-8 58.6960ms
+2022-12-08 21:27:12.081 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - -
+2022-12-08 21:27:12.139 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 58.2198ms
+2022-12-08 23:13:26.466 +06:00 [INF] User profile is available. Using '/Users/orion/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-12-08 23:13:26.669 +06:00 [INF] Now listening on: http://localhost:5001
+2022-12-08 23:13:26.670 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-08 23:13:26.670 +06:00 [INF] Hosting environment: Development
+2022-12-08 23:13:26.670 +06:00 [INF] Content root path: /Users/orion/Documents/GitHub/ProjectControl/Source/TestProject
+2022-12-08 23:14:13.136 +06:00 [INF] User profile is available. Using '/Users/orion/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-12-08 23:14:13.315 +06:00 [INF] Now listening on: http://[::]:5001
+2022-12-08 23:14:13.315 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-08 23:14:13.315 +06:00 [INF] Hosting environment: Development
+2022-12-08 23:14:13.315 +06:00 [INF] Content root path: /Users/orion/Documents/GitHub/ProjectControl/Source/TestProject
+2022-12-08 23:14:24.578 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/index.html - -
+2022-12-08 23:14:24.638 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5001/index.html - - - 200 - text/html;charset=utf-8 62.1615ms
+2022-12-08 23:14:24.802 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - -
+2022-12-08 23:14:24.862 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 59.1453ms
+2022-12-08 23:16:42.707 +06:00 [INF] User profile is available. Using '/Users/orion/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2022-12-08 23:16:42.869 +06:00 [INF] Now listening on: http://[::]:5001
+2022-12-08 23:16:42.870 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-08 23:16:42.870 +06:00 [INF] Hosting environment: Development
+2022-12-08 23:16:42.870 +06:00 [INF] Content root path: /Users/orion/Documents/GitHub/ProjectControl/Source/TestProject
+2022-12-08 23:17:04.693 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/index.html - -
+2022-12-08 23:17:04.757 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5001/index.html - - - 200 - text/html;charset=utf-8 66.1768ms
+2022-12-08 23:17:04.763 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger-ui-bundle.js - -
+2022-12-08 23:17:04.763 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger-ui-standalone-preset.js - -
+2022-12-08 23:17:04.763 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger-ui.css - -
+2022-12-08 23:17:05.083 +06:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-12-08 23:17:05.083 +06:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-12-08 23:17:05.084 +06:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-12-08 23:17:05.085 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger-ui.css - - - 200 143943 text/css 321.9011ms
+2022-12-08 23:17:05.085 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger-ui-standalone-preset.js - - - 200 339486 text/javascript 322.0949ms
+2022-12-08 23:17:05.085 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger-ui-bundle.js - - - 200 1096145 text/javascript 322.0802ms
+2022-12-08 23:17:05.258 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - -
+2022-12-08 23:17:05.328 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 70.5758ms

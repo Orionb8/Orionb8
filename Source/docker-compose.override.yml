@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  testPrject.backend:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5001
+    ports:
+      - "5006:5006"
+

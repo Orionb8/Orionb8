@@ -12,14 +12,15 @@ using TestProject.Data.Context;
 namespace TestProject.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221117161317_Init")]
+    [Migration("20221209094256_Init")]
     partial class Init
     {
+        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.10")
+                .HasAnnotation("ProductVersion", "7.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -101,7 +102,7 @@ namespace TestProject.Data.Migrations
                         {
                             Id = "38815E40-2E91-4033-849F-1202B5A319B8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "92939d89-699f-4955-842f-cf4f1320af64",
+                            ConcurrencyStamp = "827cd1a5-4524-48bd-981f-2b0731f4e379",
                             Email = "manager@project.kz",
                             EmailConfirmed = true,
                             FirstName = "Manager",
@@ -110,7 +111,7 @@ namespace TestProject.Data.Migrations
                             MiddleName = "Manager",
                             NormalizedEmail = "MANAGER@PROJECT.KZ",
                             NormalizedUserName = "MANAGER",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEyYSB7avmZJUE6FNlx9MUfvs3SjfAXWE1Dxxiv+jcqGNlBv6+XLqFpY1aiaIakNvA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEApCDnM7ejEG8D1jxQqhZkpEgRfUjKE3Y3vTRmTDS86so2DBeOEgQqdbdn+IxTIxOA==",
                             PhoneNumber = "+77085517931",
                             PhoneNumberConfirmed = true,
                             SecurityStamp = "00000000-0000-0000-0000-000000000000",
@@ -148,7 +149,6 @@ namespace TestProject.Data.Migrations
                         new
                         {
                             Id = "78A7570F-3CE5-48BA-9461-80283ED1D94D",
-                            ConcurrencyStamp = "b348c7aa-5658-40cf-b7ef-cfe9a779847b",
                             Name = "manager",
                             NormalizedName = "MANAGER"
                         });
@@ -457,8 +457,23 @@ namespace TestProject.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreatedAtTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("CreatedByUser")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("DeletedAtTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("DeletedByUser")
+                        .HasColumnType("text");
+
                     b.Property<string>("FirstName")
                         .HasColumnType("text");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("LastName")
                         .HasColumnType("text");
@@ -471,6 +486,12 @@ namespace TestProject.Data.Migrations
 
                     b.Property<int>("TeamId")
                         .HasColumnType("integer");
+
+                    b.Property<DateTime?>("UpdatedAtTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("UpdatedByUser")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 

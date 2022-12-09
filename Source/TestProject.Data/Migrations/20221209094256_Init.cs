@@ -4,10 +4,14 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace TestProject.Data.Migrations
 {
+    /// <inheritdoc />
     public partial class Init : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -240,7 +244,14 @@ namespace TestProject.Data.Migrations
                     MiddleName = table.Column<string>(type: "text", nullable: true),
                     LastName = table.Column<string>(type: "text", nullable: true),
                     PositionId = table.Column<int>(type: "integer", nullable: false),
-                    TeamId = table.Column<int>(type: "integer", nullable: false)
+                    TeamId = table.Column<int>(type: "integer", nullable: false),
+                    CreatedByUser = table.Column<string>(type: "text", nullable: true),
+                    CreatedAtTime = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    UpdatedByUser = table.Column<string>(type: "text", nullable: true),
+                    UpdatedAtTime = table.Column<DateTime>(type: "timestamp without time zone", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    DeletedByUser = table.Column<string>(type: "text", nullable: true),
+                    DeletedAtTime = table.Column<DateTime>(type: "timestamp without time zone", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -312,12 +323,12 @@ namespace TestProject.Data.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "78A7570F-3CE5-48BA-9461-80283ED1D94D", "b348c7aa-5658-40cf-b7ef-cfe9a779847b", "manager", "MANAGER" });
+                values: new object[] { "78A7570F-3CE5-48BA-9461-80283ED1D94D", null, "manager", "MANAGER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "MiddleName", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "38815E40-2E91-4033-849F-1202B5A319B8", 0, "92939d89-699f-4955-842f-cf4f1320af64", "manager@project.kz", true, "Manager", "Manager", false, null, "Manager", "MANAGER@PROJECT.KZ", "MANAGER", "AQAAAAEAACcQAAAAEEyYSB7avmZJUE6FNlx9MUfvs3SjfAXWE1Dxxiv+jcqGNlBv6+XLqFpY1aiaIakNvA==", "+77085517931", true, "00000000-0000-0000-0000-000000000000", false, "manager" });
+                values: new object[] { "38815E40-2E91-4033-849F-1202B5A319B8", 0, "827cd1a5-4524-48bd-981f-2b0731f4e379", "manager@project.kz", true, "Manager", "Manager", false, null, "Manager", "MANAGER@PROJECT.KZ", "MANAGER", "AQAAAAIAAYagAAAAEApCDnM7ejEG8D1jxQqhZkpEgRfUjKE3Y3vTRmTDS86so2DBeOEgQqdbdn+IxTIxOA==", "+77085517931", true, "00000000-0000-0000-0000-000000000000", false, "manager" });
 
             migrationBuilder.InsertData(
                 table: "HPositions",
@@ -442,6 +453,7 @@ namespace TestProject.Data.Migrations
                 column: "TeamId");
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

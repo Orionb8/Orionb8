@@ -17,21 +17,21 @@ namespace TestProject.Models
         /// <summary>
         /// Тип проекта
         /// </summary>
-        public int ProjecTypeId { get; set; }
-        [ForeignKey(nameof(ProjecTypeId))]
-        public HProjectTypeEntity HProjectType { get; set; }
+        public int ProjectTypeId { get; set; }
+        [ForeignKey(nameof(ProjectTypeId))]
+        public HProjectTypeEntity ProjectType { get; set; }
         /// <summary>
         /// Статус проекта
         /// </summary>
         public int ProjectStatusId { get; set; }
         [ForeignKey(nameof(ProjectStatusId))]
-        public HProjectStatusEntity HProjectStatus { get; set; }
+        public HProjectStatusEntity ProjectStatus { get; set; }
         /// <summary>
         /// Решение по проекту
         /// </summary>
         public int ProjectDesicionId { get; set; }
         [ForeignKey(nameof(ProjectDesicionId))]
-        public HProjectDesicionEntity HProjectDesicion { get; set; }
+        public HProjectDesicionEntity ProjectDesicion { get; set; }
 
         /// <summary>
         /// Команда ответственная за проект

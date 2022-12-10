@@ -41,7 +41,10 @@ namespace TestProject.Controllers
             _logger = loggerFactory.CreateLogger(GetType());
 
         }
-
+        /// <summary>
+        /// Должности
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Positions()
         {
@@ -56,7 +59,10 @@ namespace TestProject.Controllers
                 throw exception;
             }
         }
-
+        /// <summary>
+        /// Типы проектов
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult ProjectTypes()
         {
@@ -72,6 +78,10 @@ namespace TestProject.Controllers
             }
         }
 
+        /// <summary>
+        /// Состояния проектов
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult ProjectStatuses()
         {
@@ -87,6 +97,10 @@ namespace TestProject.Controllers
             }
         }
 
+        /// <summary>
+        /// Статусы проектов
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult ProjectDesicions()
         {

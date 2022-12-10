@@ -35,6 +35,11 @@ namespace TestProject.Controllers
             _authManager = authManager;
         }
 
+        /// <summary>
+        /// Авторизация
+        /// </summary>
+        /// <param name="loginDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("SignIn")]
         public async Task<IActionResult> SignIn([FromBody] LoginViewModel loginDTO)

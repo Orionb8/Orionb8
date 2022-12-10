@@ -20,7 +20,7 @@
     "TestProject": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:57491",
+      "applicationUrl": "http://localhost:19070",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

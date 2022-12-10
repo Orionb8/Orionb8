@@ -8,9 +8,9 @@ namespace TestProject.ViewModels
     {
         public string Number { get; set; }
         public DateTime RegisterDate { get; set; }
-        public HProjectTypeViewModel HProjectType { get; set; }
-        public HProjectStatusViewModel HProjectStatus { get; set; }
-        public HProjectDesicionViewModel HProjectDesicion { get; set; }
+        public HProjectTypeViewModel ProjectType { get; set; }
+        public HProjectStatusViewModel ProjectStatus { get; set; }
+        public HProjectDesicionViewModel ProjectDesicion { get; set; }
         public TeamViewModel Team { get; set; }
     }
 }

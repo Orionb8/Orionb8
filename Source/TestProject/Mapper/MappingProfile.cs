@@ -15,10 +15,10 @@ namespace TestProject.Mapper
         {
             CreateMap<ProjectEntity, ProjectViewModel>()
                 .ReverseMap()
-                .ForMember(x => x.HProjectDesicion, opts => opts.Ignore())
-                .ForMember(x => x.HProjectStatus, opts => opts.Ignore())
-                .ForMember(x => x.HProjectType, opts => opts.Ignore())
-                .ForMember(x=>x.Team, opts=>opts.Ignore());
+                .ForMember(x => x.ProjectDesicion, opts => opts.Ignore())
+                .ForMember(x => x.ProjectStatus, opts => opts.Ignore())
+                .ForMember(x => x.ProjectType, opts => opts.Ignore())
+                .ForMember(x => x.Team, opts => opts.Ignore());
             CreateMap<EmployeeEntity, EmployeeViewModel>()
                 .ReverseMap()
                 .ForMember(x => x.Position, opts => opts.Ignore())
@@ -27,6 +27,7 @@ namespace TestProject.Mapper
             CreateMap<HProjectStatusEntity, HProjectStatusViewModel>().ReverseMap();
             CreateMap<HProjectTypeEntity, HProjectTypeViewModel>().ReverseMap();
             CreateMap<HPositionEntity, HPositionViewModel>().ReverseMap();
+            CreateMap<TeamEntity, TeamViewModel>().ReverseMap();
         }
     }
 }

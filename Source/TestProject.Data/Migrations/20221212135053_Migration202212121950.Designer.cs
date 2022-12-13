@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TestProject.Data.Context;
@@ -11,9 +12,11 @@ using TestProject.Data.Context;
 namespace TestProject.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20221212135053_Migration202212121950")]
+    partial class Migration202212121950
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,7 +102,7 @@ namespace TestProject.Data.Migrations
                         {
                             Id = "38815E40-2E91-4033-849F-1202B5A319B8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "224f9a7b-aaa5-4b6d-a0bf-1ed87667a0b5",
+                            ConcurrencyStamp = "87bdc11c-a717-4690-9d1f-363278c0c9f0",
                             Email = "manager@project.kz",
                             EmailConfirmed = true,
                             FirstName = "Manager",
@@ -108,7 +111,7 @@ namespace TestProject.Data.Migrations
                             MiddleName = "Manager",
                             NormalizedEmail = "MANAGER@PROJECT.KZ",
                             NormalizedUserName = "MANAGER",
-                            PasswordHash = "AQAAAAIAAYagAAAAENyHRZ+gT5dirsYk1RjEo+3TSaV5u9dK8NZ9F+gWo7kpHtxFWbJQI5ujrZoPeYFYdw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIHtte9765cDhJw9gLW/8s7vpdF4K7rG15At7NnjWWgu1BmIf0B6H4NE5Vxo5jZFZA==",
                             PhoneNumber = "+77085517931",
                             PhoneNumberConfirmed = true,
                             SecurityStamp = "00000000-0000-0000-0000-000000000000",
@@ -887,9 +890,6 @@ namespace TestProject.Data.Migrations
                     b.Property<string>("UpdatedByUser")
                         .HasColumnType("text");
 
-                    b.Property<int?>("UploadId")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id");
 
                     b.HasIndex("HDocumentTypeId");
@@ -899,8 +899,6 @@ namespace TestProject.Data.Migrations
                     b.HasIndex("HTabId");
 
                     b.HasIndex("ProjectId");
-
-                    b.HasIndex("UploadId");
 
                     b.ToTable("Documents");
                 });
@@ -1058,61 +1056,6 @@ namespace TestProject.Data.Migrations
                     b.ToTable("Teams");
                 });
 
-            modelBuilder.Entity("TestProject.Models.UploadEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Code")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("CreatedAtTime")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("CreatedByUser")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime?>("DeletedAtTime")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("DeletedByUser")
-                        .HasColumnType("text");
-
-                    b.Property<string>("FileName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("FilePath")
-                        .HasColumnType("text");
-
-                    b.Property<string>("FileScreenName")
-                        .HasColumnType("text");
-
-                    b.Property<double>("FileSize")
-                        .HasColumnType("double precision");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime?>("UpdatedAtTime")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("UpdatedByUser")
-                        .HasColumnType("text");
-
-                    b.Property<string>("downloadUrl")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Uploads");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -1214,10 +1157,6 @@ namespace TestProject.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TestProject.Models.UploadEntity", "Upload")
-                        .WithMany()
-                        .HasForeignKey("UploadId");
-
                     b.Navigation("HDocumentType");
 
                     b.Navigation("HFolder");
@@ -1225,8 +1164,6 @@ namespace TestProject.Data.Migrations
                     b.Navigation("HTab");
 
                     b.Navigation("Project");
-
-                    b.Navigation("Upload");
                 });
 
             modelBuilder.Entity("TestProject.Models.EmployeeEntity", b =>

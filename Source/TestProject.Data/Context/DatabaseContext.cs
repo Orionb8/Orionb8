@@ -19,6 +19,11 @@ namespace TestProject.Data.Context
         public DbSet<HPositionEntity> HPositions { get; set; }
         public DbSet<HProjectStatusEntity> HProjectStatuses { get; set; }
         public DbSet<HProjectTypeEntity> HProjectTypes { get; set; }
+        public DbSet<HTabEntity> HTabs { get; set; }
+        public DbSet<HFolderEntity> HFolders { get; set; }
+        public DbSet<HDocumentTypeEntity> HDocumentTypes { get; set; }
+        public DbSet<DocumentEntity> Documents { get; set; }
+        public DbSet<UploadEntity> Uploads { get; set; }
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options)
           : base(options)
@@ -52,6 +57,9 @@ namespace TestProject.Data.Context
             entityBuilder.ApplyConfiguration(new UserConfig());
             entityBuilder.ApplyConfiguration(new RoleConfig());
             entityBuilder.ApplyConfiguration(new UsersWithRolesConfig());
+            entityBuilder.ApplyConfiguration(new HTabConfig());
+            entityBuilder.ApplyConfiguration(new HFolderConfig());
+            entityBuilder.ApplyConfiguration(new HDocumentTypeConfig());
         }
     }
 }

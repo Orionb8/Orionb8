@@ -153,10 +153,15 @@ namespace TestProject
             services.AddScoped<IRepo<ProjectEntity>, BaseRepo<ProjectEntity>>();
             services.AddScoped<IRepo<EmployeeEntity>, BaseRepo<EmployeeEntity>>();
             services.AddScoped<IRepo<TeamEntity>, BaseRepo<TeamEntity>>();
+            services.AddScoped<IRepo<DocumentEntity>, BaseRepo<DocumentEntity>>();
             services.AddScoped<IHRepo<HPositionEntity>, BaseHRepo<HPositionEntity>>();
             services.AddScoped<IHRepo<HProjectDesicionEntity>, BaseHRepo<HProjectDesicionEntity>>();
             services.AddScoped<IHRepo<HProjectStatusEntity>, BaseHRepo<HProjectStatusEntity>>();
             services.AddScoped<IHRepo<HProjectTypeEntity>, BaseHRepo<HProjectTypeEntity>>();
+            services.AddScoped<IHRepo<HTabEntity>, BaseHRepo<HTabEntity>>();
+            services.AddScoped<IHRepo<HFolderEntity>, BaseHRepo<HFolderEntity>>();
+            services.AddScoped<IHRepo<HDocumentTypeEntity>, BaseHRepo<HDocumentTypeEntity>>();
+            services.AddScoped<IUploadService, UploadService>();
         }
     }
 }
